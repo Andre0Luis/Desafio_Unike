@@ -16,7 +16,7 @@ import java.util.Optional;
 public class CalculoController {
 
     @Autowired
-    private CalculoService calculoService;
+    private final CalculoService calculoService;
 
     public CalculoController(CalculoService calculoService) {
         this.calculoService = calculoService;
@@ -44,9 +44,12 @@ public class CalculoController {
     public ResponseEntity<List<Integer>> listaOrdenadaDB(@RequestBody CalculoDTO dto) {
 
         try {
-            List<Integer> result = calculoService.listaOrdenadaDB(dto);
-
-            return ResponseEntity.ok().body(result);
+            if (!dto.getElementos().isEmpty()){
+                List<Integer> result = calculoService.listaOrdenadaDB(dto);
+                return ResponseEntity.ok().body(result);
+            } else {
+                return ResponseEntity.noContent().build();
+            }
         } catch (Exception e) {
             return ResponseEntity.badRequest().build();
         }
@@ -55,10 +58,14 @@ public class CalculoController {
 
     @PostMapping(path = "/db/listaDesordenada")
     public ResponseEntity<List<Integer>> listaDesordenadaDB(@RequestBody CalculoDTO lista) {
-         try {
-             List<Integer> result = calculoService.listaDesordenadaDB(lista);
 
-             return ResponseEntity.ok().body(result);
+         try {
+             if (!lista.getElementos().isEmpty()){
+                 List<Integer> result = calculoService.listaDesordenadaDB(lista);
+                 return ResponseEntity.ok().body(result);
+             } else {
+                 return ResponseEntity.noContent(   ).build();
+             }
          } catch (Exception e) {
              return ResponseEntity.badRequest().build();
          }
