@@ -39,6 +39,7 @@ public class UnikeApplication {
 
 			}
 		}
+		System.out.println("Primeiro Objetivo \n Lista Ordenada: " + lista_repetidos);
 	}
 
 	//Segundo Objetivo do teste prático
@@ -54,6 +55,7 @@ public class UnikeApplication {
 				lista_repetidos.add(item);
 			}
 		}
+		System.out.println("Segundo Objetivo \n Lista Desordenada: " + lista_repetidos);
 	}
 
 
