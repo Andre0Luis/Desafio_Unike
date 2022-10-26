@@ -17,7 +17,7 @@ public class UnikeApplication {
 		lista.add(5);
 		lista.add(2);
 		lista.add(2);
-		lista.add(3);
+		lista.add(2);
 		lista.add(1);
 		lista.add(7);
 		lista.add(1);
@@ -35,8 +35,9 @@ public class UnikeApplication {
 			if (!lista_unicos.contains(item)) {
 				lista_unicos.add(item);
 			} else {
-				lista_repetidos.add(item);
-
+				if(!lista_repetidos.contains(item)){
+					lista_repetidos.add(item);
+				}
 			}
 		}
 		System.out.println("Primeiro Objetivo \n Lista Ordenada: " + lista_repetidos);
@@ -52,7 +53,9 @@ public class UnikeApplication {
 			if (!lista_unicos.contains(item)) {
 				lista_unicos.add(item);
 			} else {
-				lista_repetidos.add(item);
+				if(!lista_repetidos.contains(item)){
+					lista_repetidos.add(item);
+				}
 			}
 		}
 		System.out.println("Segundo Objetivo \n Lista Desordenada: " + lista_repetidos);
