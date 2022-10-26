@@ -30,8 +30,9 @@ public class CalculoService {
             if (!lista_unicos.contains(item)) {
                 lista_unicos.add(item);
             } else {
-                lista_repetidos.add(item);
-
+                if(!lista_repetidos.contains(item)){
+                    lista_repetidos.add(item);
+                }
             }
         }
         return lista_repetidos;
@@ -46,7 +47,9 @@ public class CalculoService {
             if (!lista_unicos.contains(item)) {
                 lista_unicos.add(item);
             } else {
-                lista_repetidos.add(item);
+                if(!lista_repetidos.contains(item)){
+                    lista_repetidos.add(item);
+                }
             }
         }
         return lista_repetidos;
@@ -61,8 +64,9 @@ public class CalculoService {
             if (!lista_unicos.contains(item)) {
                 lista_unicos.add(item);
             } else {
-                lista_repetidos.add(item);
-
+                if(!lista_repetidos.contains(item)){
+                    lista_repetidos.add(item);
+                }
             }
         }
 
@@ -84,7 +88,9 @@ public class CalculoService {
             if (!lista_unicos.contains(item)) {
                 lista_unicos.add(item);
             } else {
-                lista_repetidos.add(item);
+                if(!lista_repetidos.contains(item)){
+                    lista_repetidos.add(item);
+                }
             }
         }
 

@@ -2,10 +2,9 @@ package br.com.unike.controller.dto;
 
 import br.com.unike.domain.Calculo;
 
-import java.util.List;
-
 public class CalculoResponseDTO {
 
+    private Long id;
     private String elemento;
     private String resultado;
 
@@ -13,14 +12,24 @@ public class CalculoResponseDTO {
 
     }
 
-    public CalculoResponseDTO(String elemento, String resultado) {
+    public CalculoResponseDTO(Long id, String elemento, String resultado) {
+        this.id = id;
         this.elemento = elemento;
         this.resultado = resultado;
     }
 
     public CalculoResponseDTO(Calculo calculo) {
+        this.id = calculo.getId();
         this.elemento = calculo.getElemento();
         this.resultado = calculo.getResultado();
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getElemento() {
@@ -42,8 +51,9 @@ public class CalculoResponseDTO {
     @Override
     public String toString() {
         return "CalculoResponseDTO{" +
-                "elemento=" + elemento +
-                ", resultado=" + resultado +
+                "id=" + id +
+                ", elemento='" + elemento + '\'' +
+                ", resultado='" + resultado + '\'' +
                 '}';
     }
 }
